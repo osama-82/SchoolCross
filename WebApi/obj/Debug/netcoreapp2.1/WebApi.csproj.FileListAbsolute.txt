@@ -1,0 +1,14 @@
+C:\work\Git\SchoolCross\WebApi\bin\Debug\netcoreapp2.1\WebApi.deps.json
+C:\work\Git\SchoolCross\WebApi\bin\Debug\netcoreapp2.1\WebApi.runtimeconfig.json
+C:\work\Git\SchoolCross\WebApi\bin\Debug\netcoreapp2.1\WebApi.runtimeconfig.dev.json
+C:\work\Git\SchoolCross\WebApi\bin\Debug\netcoreapp2.1\WebApi.dll
+C:\work\Git\SchoolCross\WebApi\bin\Debug\netcoreapp2.1\WebApi.pdb
+C:\work\Git\SchoolCross\WebApi\obj\Debug\netcoreapp2.1\WebApi.csprojAssemblyReference.cache
+C:\work\Git\SchoolCross\WebApi\obj\Debug\netcoreapp2.1\WebApi.csproj.CoreCompileInputs.cache
+C:\work\Git\SchoolCross\WebApi\obj\Debug\netcoreapp2.1\WebApi.RazorAssemblyInfo.cache
+C:\work\Git\SchoolCross\WebApi\obj\Debug\netcoreapp2.1\WebApi.RazorAssemblyInfo.cs
+C:\work\Git\SchoolCross\WebApi\obj\Debug\netcoreapp2.1\WebApi.AssemblyInfoInputs.cache
+C:\work\Git\SchoolCross\WebApi\obj\Debug\netcoreapp2.1\WebApi.AssemblyInfo.cs
+C:\work\Git\SchoolCross\WebApi\obj\Debug\netcoreapp2.1\WebApi.RazorTargetAssemblyInfo.cache
+C:\work\Git\SchoolCross\WebApi\obj\Debug\netcoreapp2.1\WebApi.dll
+C:\work\Git\SchoolCross\WebApi\obj\Debug\netcoreapp2.1\WebApi.pdb
