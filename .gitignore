@@ -1,0 +1,52 @@
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+
+# compiled output
+Spa/dist
+Spa/dist-server
+Spa/tmp
+Spa/out-tsc
+Api/WebApi/bin
+Api/WebApi/obj
+Api/WebApi/wwwroot
+Api/ApiTest/bin
+Api/ApiTest/obj
+Api/ApiTest/lcov.info
+
+# dependencies
+Spa/node_modules
+
+# IDEs and editors
+Spa/.idea
+Spa/.project
+Spa/.classpath
+Spa/.c9/
+Spa/*.launch
+Spa/.settings/
+Spa/*.sublime-workspace
+
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# misc
+Spa/.sass-cache
+Spa/connect.lock
+Spa/coverage
+Spa/libpeerconnection.log
+Spa/npm-debug.log
+Spa/yarn-error.log
+Spa/testem.log
+Spa/typings
+
+# e2e
+Spa/e2e/*.js
+Spa/e2e/*.map
+
+# System Files
+Spa/.DS_Store
+Spa/Thumbs.db
+# User Pref File
+Api/WebApi/UserPreferencesData
