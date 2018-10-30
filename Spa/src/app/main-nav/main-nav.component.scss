@@ -7,7 +7,7 @@
 }
 
 .sidenav .mat-toolbar {
-  background: MediumTurquoise;
+  background: powderblue;;
 }
 
 .mat-toolbar.mat-primary {
@@ -17,4 +17,21 @@
 }
 .Title{
   margin: auto;
+}
+.loginArea{
+    background: rgb(176, 181, 247);
+    margin-top: -8px;
+    margin-bottom: -8px;
+    padding: 30px;
+    font-size: 20px;
+}
+.loginButton{
+
+  margin-right: 10px;
+}
+.childloginButton{
+  height: 100%;
+  width: 100%;
+  background-color: powderblue;
+  margin-top: 10px;
 }

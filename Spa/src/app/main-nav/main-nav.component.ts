@@ -17,4 +17,7 @@ export class MainNavComponent {
 
   constructor(private breakpointObserver: BreakpointObserver) {}
 
+  stopPropagation(event){
+    event.stopPropagation();
+  }
 }

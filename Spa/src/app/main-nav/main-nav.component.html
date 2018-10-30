@@ -1,8 +1,6 @@
 <mat-sidenav-container class="sidenav-container">
-  <mat-sidenav #drawer class="sidenav" fixedInViewport="true"
-      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
-      [mode]="(isHandset$ | async) ? 'over' : 'side'"
-      [opened]="!(isHandset$ | async)">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport="true" [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="!(isHandset$ | async)">
     <mat-toolbar>Main Menu</mat-toolbar>
     <mat-nav-list>
       <a mat-list-item href="#">Link 1</a>
@@ -12,16 +10,49 @@
   </mat-sidenav>
   <mat-sidenav-content>
     <mat-toolbar color="primary">
-      <button
-        type="button"
-        aria-label="Toggle sidenav"
-        mat-icon-button
-        (click)="drawer.toggle()">
+      <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()">
         <!-- *ngIf="isHandset$ | async"
         this if we can add to the button to hide and show base on expand -->
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
-      </button>   
+      </button>
       <span class="Title">School Corss</span>
+      <div>
+        <button class="loginButton" mat-stroked-button [matMenuTriggerFor]="menu">
+          Log in
+        </button>
+
+        <mat-menu #menu="matMenu">
+          <div class="loginArea">
+            <div (click)="stopPropagation($event)">
+              <div>
+                <label for="userName">User ID:</label>
+                <div class="input-group">
+                  <input id="userName" name="userName" class="form-control" required autofocus="autofocus"
+                    (keydown.Tab)="stopPropagation($event)" />
+                  <span class="input-group-addon">
+                    <i class="glyphicon glyphicon-envelope"></i>
+                  </span>
+                </div>
+              </div>
+              <div>
+                <label for="password">Password:</label>
+                <div class="input-group">
+                  <input id="password" name="password" class="form-control" required type="password" (keydown.Tab)="stopPropagation($event)" />
+                  <span class="input-group-addon">
+                    <i class="glyphicon glyphicon-lock"></i>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div>
+              <button mat-stroked-button class="childloginButton">
+                Login
+              </button>
+            </div>
+          </div>
+        </mat-menu>
+
+      </div>
     </mat-toolbar>
     <div style="text-align:center">
       <h1>
