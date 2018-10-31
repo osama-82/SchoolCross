@@ -4,15 +4,17 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MainNavComponent } from './main-nav/main-nav.component';
+import { MainComponent } from './main/main.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule } from '@angular/material';
 import {MatMenuModule} from '@angular/material/menu';
+import { DashboardComponent } from './main/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MainNavComponent
+    MainComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
