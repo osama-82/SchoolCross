@@ -8,11 +8,13 @@ import { MainComponent } from './main/main.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule } from '@angular/material';
 import {MatMenuModule} from '@angular/material/menu';
+import { DashboardComponent } from './main/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MainComponent
+    MainComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,

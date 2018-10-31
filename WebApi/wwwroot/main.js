@@ -35,6 +35,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppRoutingModule", function() { return AppRoutingModule; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _main_dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./main/dashboard/dashboard.component */ "./src/app/main/dashboard/dashboard.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -43,7 +44,19 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 };
 
 
-var routes = [];
+
+var routes = [
+    {
+        path: 'dashboard',
+        component: _main_dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_2__["DashboardComponent"]
+    },
+    {
+        path: '', redirectTo: 'dashboard', pathMatch: 'full'
+    },
+    {
+        path: '**', component: _main_dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_2__["DashboardComponent"]
+    }
+];
 var AppRoutingModule = /** @class */ (function () {
     function AppRoutingModule() {
     }
@@ -67,7 +80,7 @@ var AppRoutingModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!-- The content below is only a placeholder and can be replaced. -->\r\n<app-main></app-main>\r\n\r\n<router-outlet></router-outlet>\r\n"
+module.exports = "<!-- The content below is only a placeholder and can be replaced. -->\r\n<app-main></app-main>\r\n"
 
 /***/ }),
 
@@ -137,12 +150,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_cdk_layout__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/cdk/layout */ "./node_modules/@angular/cdk/esm5/layout.es5.js");
 /* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
 /* harmony import */ var _angular_material_menu__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/material/menu */ "./node_modules/@angular/material/esm5/menu.es5.js");
+/* harmony import */ var _main_dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./main/dashboard/dashboard.component */ "./src/app/main/dashboard/dashboard.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -159,7 +174,8 @@ var AppModule = /** @class */ (function () {
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
             declarations: [
                 _app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"],
-                _main_main_component__WEBPACK_IMPORTED_MODULE_5__["MainComponent"]
+                _main_main_component__WEBPACK_IMPORTED_MODULE_5__["MainComponent"],
+                _main_dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_9__["DashboardComponent"]
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
@@ -184,6 +200,69 @@ var AppModule = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/main/dashboard/dashboard.component.html":
+/*!*********************************************************!*\
+  !*** ./src/app/main/dashboard/dashboard.component.html ***!
+  \*********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div style=\"text-align:center\">\n  <h1>\n    Welcome to Spa!\n  </h1>\n</div>\n<h2>Here are some links to help you start: </h2>"
+
+/***/ }),
+
+/***/ "./src/app/main/dashboard/dashboard.component.scss":
+/*!*********************************************************!*\
+  !*** ./src/app/main/dashboard/dashboard.component.scss ***!
+  \*********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL21haW4vZGFzaGJvYXJkL2Rhc2hib2FyZC5jb21wb25lbnQuc2NzcyJ9 */"
+
+/***/ }),
+
+/***/ "./src/app/main/dashboard/dashboard.component.ts":
+/*!*******************************************************!*\
+  !*** ./src/app/main/dashboard/dashboard.component.ts ***!
+  \*******************************************************/
+/*! exports provided: DashboardComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DashboardComponent", function() { return DashboardComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var DashboardComponent = /** @class */ (function () {
+    function DashboardComponent() {
+    }
+    DashboardComponent.prototype.ngOnInit = function () {
+    };
+    DashboardComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-dashboard',
+            template: __webpack_require__(/*! ./dashboard.component.html */ "./src/app/main/dashboard/dashboard.component.html"),
+            styles: [__webpack_require__(/*! ./dashboard.component.scss */ "./src/app/main/dashboard/dashboard.component.scss")]
+        }),
+        __metadata("design:paramtypes", [])
+    ], DashboardComponent);
+    return DashboardComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/main/main.component.html":
 /*!******************************************!*\
   !*** ./src/app/main/main.component.html ***!
@@ -191,7 +270,7 @@ var AppModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<mat-sidenav-container class=\"sidenav-container\">\r\n  <mat-sidenav #drawer class=\"sidenav\" fixedInViewport=\"true\" [attr.role]=\"(isHandset$ | async) ? 'dialog' : 'navigation'\"\r\n    [mode]=\"(isHandset$ | async) ? 'over' : 'side'\" [opened]=\"!(isHandset$ | async)\">\r\n    <mat-toolbar>Main Menu</mat-toolbar>\r\n    <mat-nav-list>\r\n      <a mat-list-item href=\"#\">Link 1</a>\r\n      <a mat-list-item href=\"#\">Link 2</a>\r\n      <a mat-list-item href=\"#\">Link 3</a>\r\n    </mat-nav-list>\r\n  </mat-sidenav>\r\n  <mat-sidenav-content>\r\n    <mat-toolbar color=\"primary\">\r\n      <button type=\"button\" aria-label=\"Toggle sidenav\" mat-icon-button (click)=\"drawer.toggle()\">\r\n        <!-- *ngIf=\"isHandset$ | async\"\r\n        this if we can add to the button to hide and show base on expand -->\r\n        <mat-icon aria-label=\"Side nav toggle icon\">menu</mat-icon>\r\n      </button>\r\n      <span class=\"Title\">School Corss</span>\r\n      <div>\r\n        <button class=\"loginButton\" mat-stroked-button [matMenuTriggerFor]=\"menu\">\r\n          Log in\r\n        </button>\r\n\r\n        <mat-menu #menu=\"matMenu\">\r\n          <div class=\"loginArea\">\r\n            <div (click)=\"stopPropagation($event)\">\r\n              <div>\r\n                <label for=\"userName\">User ID:</label>\r\n                <div class=\"input-group\">\r\n                  <input id=\"userName\" name=\"userName\" class=\"form-control\" required autofocus=\"autofocus\"\r\n                    (keydown.Tab)=\"stopPropagation($event)\" />\r\n                  <span class=\"input-group-addon\">\r\n                    <i class=\"glyphicon glyphicon-envelope\"></i>\r\n                  </span>\r\n                </div>\r\n              </div>\r\n              <div>\r\n                <label for=\"password\">Password:</label>\r\n                <div class=\"input-group\">\r\n                  <input id=\"password\" name=\"password\" class=\"form-control\" required type=\"password\" (keydown.Tab)=\"stopPropagation($event)\" />\r\n                  <span class=\"input-group-addon\">\r\n                    <i class=\"glyphicon glyphicon-lock\"></i>\r\n                  </span>\r\n                </div>\r\n              </div>\r\n            </div>\r\n            <div>\r\n              <button mat-stroked-button class=\"childloginButton\">\r\n                Login\r\n              </button>\r\n            </div>\r\n          </div>\r\n        </mat-menu>\r\n\r\n      </div>\r\n    </mat-toolbar>\r\n    <div style=\"text-align:center\">\r\n      <h1>\r\n        Welcome to Spa!\r\n      </h1>\r\n    </div>\r\n    <h2>Here are some links to help you start: </h2>\r\n    <!-- Add Content Here -->\r\n  </mat-sidenav-content>\r\n</mat-sidenav-container>\r\n"
+module.exports = "<mat-sidenav-container class=\"sidenav-container\">\r\n  <mat-sidenav #drawer class=\"sidenav\" fixedInViewport=\"true\" [attr.role]=\"(isHandset$ | async) ? 'dialog' : 'navigation'\"\r\n    [mode]=\"(isHandset$ | async) ? 'over' : 'side'\" [opened]=\"!(isHandset$ | async)\">\r\n    <mat-toolbar>Main Menu</mat-toolbar>\r\n    <mat-nav-list>\r\n      <a mat-list-item href=\"#\">Link 1</a>\r\n      <a mat-list-item href=\"#\">Link 2</a>\r\n      <a mat-list-item href=\"#\">Link 3</a>\r\n    </mat-nav-list>\r\n  </mat-sidenav>\r\n  <mat-sidenav-content>\r\n    <mat-toolbar color=\"primary\">\r\n      <button type=\"button\" aria-label=\"Toggle sidenav\" mat-icon-button (click)=\"drawer.toggle()\">\r\n        <!-- *ngIf=\"isHandset$ | async\"\r\n        this if we can add to the button to hide and show base on expand -->\r\n        <mat-icon aria-label=\"Side nav toggle icon\">menu</mat-icon>\r\n      </button>\r\n      <span class=\"Title\">School Corss</span>\r\n      <div>\r\n        <button class=\"loginButton\" mat-stroked-button [matMenuTriggerFor]=\"menu\">\r\n          Log in\r\n        </button>\r\n\r\n        <mat-menu #menu=\"matMenu\">\r\n          <div class=\"loginArea\">\r\n            <div (click)=\"stopPropagation($event)\">\r\n              <div>\r\n                <label for=\"userName\">User ID:</label>\r\n                <div class=\"input-group\">\r\n                  <input id=\"userName\" name=\"userName\" class=\"form-control\" required autofocus=\"autofocus\"\r\n                    (keydown.Tab)=\"stopPropagation($event)\" />\r\n                  <span class=\"input-group-addon\">\r\n                    <i class=\"glyphicon glyphicon-envelope\"></i>\r\n                  </span>\r\n                </div>\r\n              </div>\r\n              <div>\r\n                <label for=\"password\">Password:</label>\r\n                <div class=\"input-group\">\r\n                  <input id=\"password\" name=\"password\" class=\"form-control\" required type=\"password\" (keydown.Tab)=\"stopPropagation($event)\" />\r\n                  <span class=\"input-group-addon\">\r\n                    <i class=\"glyphicon glyphicon-lock\"></i>\r\n                  </span>\r\n                </div>\r\n              </div>\r\n            </div>\r\n            <div>\r\n              <button mat-stroked-button class=\"childloginButton\">\r\n                Login\r\n              </button>\r\n            </div>\r\n          </div>\r\n        </mat-menu>\r\n\r\n      </div>\r\n    </mat-toolbar>\r\n    \r\n    <router-outlet></router-outlet>\r\n    \r\n    <!-- Add Content Here -->\r\n  </mat-sidenav-content>\r\n</mat-sidenav-container>\r\n"
 
 /***/ }),
 
