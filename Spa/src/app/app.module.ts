@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -9,6 +11,7 @@ import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule } from '@angular/material';
 import {MatMenuModule} from '@angular/material/menu';
 import { DashboardComponent } from './main/dashboard/dashboard.component';
+import { SecurityService } from './_services/security.service';
 
 @NgModule({
   declarations: [
@@ -18,7 +21,9 @@ import { DashboardComponent } from './main/dashboard/dashboard.component';
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     AppRoutingModule,
+    HttpClientModule,
     BrowserAnimationsModule,
     LayoutModule,
     MatToolbarModule,
@@ -28,7 +33,9 @@ import { DashboardComponent } from './main/dashboard/dashboard.component';
     MatListModule,
     MatMenuModule
   ],
-  providers: [],
+  providers: [
+    SecurityService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
