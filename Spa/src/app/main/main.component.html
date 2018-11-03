@@ -1,5 +1,6 @@
 <mat-sidenav-container class="sidenav-container">
-    <mat-sidenav #drawer class="sidenav"
+    <mat-sidenav *ngIf="showSide"
+    #drawer class="sidenav"
     fixedInViewport="true" 
     [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
     [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="!(isHandset$ | async)">
@@ -12,15 +13,21 @@
    </mat-sidenav>
   <mat-sidenav-content>
     <mat-toolbar color="primary">
-      <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()">
-        <!-- *ngIf="isHandset$ | async"
-        this if we can add to the button to hide and show base on expand -->
-        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
-      </button>
+      <div *ngIf="securityService.userSecurity.isAuthenticated">
+          <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="toggleNav()">
+              <!-- *ngIf="isHandset$ | async"
+              this if we can add to the button to hide and show base on expand -->
+              <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+            </button>
+      </div>
+      
       <span class="Title">School Corss</span>
       <div>
-        <button class="loginButton" mat-stroked-button [matMenuTriggerFor]="menu">
+        <button *ngIf="!securityService.userSecurity.isAuthenticated" class="loginButton" mat-stroked-button [matMenuTriggerFor]="menu">
           Log in
+        </button>
+        <button *ngIf="securityService.userSecurity.isAuthenticated" class="loginButton" mat-stroked-button (click)="logOut()">
+            Log out
         </button>
 
         <mat-menu #menu="matMenu">
@@ -54,7 +61,7 @@
               </div>
             </div>
             <div>
-              <button mat-stroked-button class="childloginButton" (click)="login()">
+              <button mat-stroked-button class="childloginButton" (click)="logIn()">
                 Login
               </button>
             </div>

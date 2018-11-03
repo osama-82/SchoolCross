@@ -14,6 +14,7 @@ import { AppUserAuth } from '../_models/app-user-auth';
 export class MainComponent implements OnInit {
 
   user: AppUser;
+  showSide: boolean;
 
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
     .pipe(
@@ -31,12 +32,29 @@ export class MainComponent implements OnInit {
     this.user = new AppUser();
   }
 
-  login() {
+  logIn() {
     this.securityService.login(this.user)
       .subscribe(resp => {
+        if(this.securityService.userSecurity.isAuthenticated) {
+          this.showSide = true;
+        }
         console.log('log in succeeded');
       }, error => {
         console.log(error);
     });
+  }
+
+  logOut() {
+    this.showSide = false;
+    this.securityService.logout();
+  }
+
+  toggleNav() {
+    if(this.showSide) {
+      this.showSide = false;
+    }
+    else {
+      this.showSide = true;
+    }
   }
 }
