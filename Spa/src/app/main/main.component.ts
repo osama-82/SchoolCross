@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { SecurityService } from '../_services/security.service';
 import { AppUser } from '../_models/app-user';
-import { AppUserAuth } from '../_models/app-user-auth';
 
 @Component({
   selector: 'app-main',
@@ -22,7 +22,8 @@ export class MainComponent implements OnInit {
     );
 
   constructor(private breakpointObserver: BreakpointObserver,
-              public securityService: SecurityService) {}
+              public securityService: SecurityService,
+              private router: Router) {}
 
   stopPropagation(event){
     event.stopPropagation();
@@ -37,6 +38,7 @@ export class MainComponent implements OnInit {
       .subscribe(resp => {
         if(this.securityService.userSecurity.isAuthenticated) {
           this.showSide = true;
+          this.router.navigate(['teacherProfile']);
         }
         console.log('log in succeeded');
       }, error => {

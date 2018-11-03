@@ -12,12 +12,14 @@ import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, Mat
 import {MatMenuModule} from '@angular/material/menu';
 import { DashboardComponent } from './main/dashboard/dashboard.component';
 import { SecurityService } from './_services/security.service';
+import { UserProfileComponent } from './main/user-profile/user-profile.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MainComponent,
-    DashboardComponent
+    DashboardComponent,
+    UserProfileComponent
   ],
   imports: [
     BrowserModule,

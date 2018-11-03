@@ -144,6 +144,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 /* harmony import */ var _main_dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./main/dashboard/dashboard.component */ "./src/app/main/dashboard/dashboard.component.ts");
+/* harmony import */ var _main_user_profile_user_profile_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./main/user-profile/user-profile.component */ "./src/app/main/user-profile/user-profile.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -153,10 +154,15 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 
 
+
 var routes = [
     {
         path: 'dashboard',
         component: _main_dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_2__["DashboardComponent"]
+    },
+    {
+        path: 'teacherProfile',
+        component: _main_user_profile_user_profile_component__WEBPACK_IMPORTED_MODULE_3__["UserProfileComponent"]
     },
     {
         path: '', redirectTo: 'dashboard', pathMatch: 'full'
@@ -223,7 +229,6 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 var AppComponent = /** @class */ (function () {
     function AppComponent() {
-        this.title = 'Spa';
     }
     AppComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -262,12 +267,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_material_menu__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/material/menu */ "./node_modules/@angular/material/esm5/menu.es5.js");
 /* harmony import */ var _main_dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./main/dashboard/dashboard.component */ "./src/app/main/dashboard/dashboard.component.ts");
 /* harmony import */ var _services_security_service__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./_services/security.service */ "./src/app/_services/security.service.ts");
+/* harmony import */ var _main_user_profile_user_profile_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./main/user-profile/user-profile.component */ "./src/app/main/user-profile/user-profile.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -289,7 +296,8 @@ var AppModule = /** @class */ (function () {
             declarations: [
                 _app_component__WEBPACK_IMPORTED_MODULE_5__["AppComponent"],
                 _main_main_component__WEBPACK_IMPORTED_MODULE_7__["MainComponent"],
-                _main_dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_11__["DashboardComponent"]
+                _main_dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_11__["DashboardComponent"],
+                _main_user_profile_user_profile_component__WEBPACK_IMPORTED_MODULE_13__["UserProfileComponent"]
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
@@ -325,7 +333,7 @@ var AppModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div style=\"text-align:center\">\r\n  <h1>\r\n    Welcome to Spa!\r\n  </h1>\r\n</div>\r\n<h2>Here are some links to help you start: </h2>"
+module.exports = "<div style=\"text-align:center\">\r\n  <h1>\r\n    Welcome to School Cross\r\n  </h1>\r\n</div>\r\n<h2>Here are some links to help you start: </h2>"
 
 /***/ }),
 
@@ -388,7 +396,7 @@ var DashboardComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<mat-sidenav-container class=\"sidenav-container\">\r\n  <mat-sidenav #drawer class=\"sidenav\"\r\n   fixedInViewport=\"true\" \r\n   [attr.role]=\"(isHandset$ | async) ? 'dialog' : 'navigation'\"\r\n   [mode]=\"(isHandset$ | async) ? 'over' : 'side'\" [opened]=\"!(isHandset$ | async)\"\r\n   *ngIf=\"securityService.userSecurity.isAuthenticated\">\r\n    <mat-toolbar>Main Menu</mat-toolbar>\r\n    <mat-nav-list>\r\n      <a mat-list-item href=\"#\">Link 1</a>\r\n      <a mat-list-item href=\"#\">Link 2</a>\r\n      <a mat-list-item href=\"#\">Link 3</a>\r\n    </mat-nav-list>\r\n  </mat-sidenav>\r\n  <mat-sidenav-content>\r\n    <mat-toolbar color=\"primary\">\r\n      <button \r\n      type=\"button\" \r\n      aria-label=\"Toggle sidenav\" \r\n      mat-icon-button \r\n      (click)=\"drawer.toggle()\"\r\n      *ngIf=\"securityService.userSecurity.isAuthenticated\">\r\n        <!-- *ngIf=\"isHandset$ | async\"\r\n        this if we can add to the button to hide and show base on expand -->\r\n        <mat-icon aria-label=\"Side nav toggle icon\">menu</mat-icon>\r\n      </button>\r\n      <span class=\"Title\">School Corss</span>\r\n      <div>\r\n        <button class=\"loginButton\" mat-stroked-button [matMenuTriggerFor]=\"menu\">\r\n          Log in\r\n        </button>\r\n\r\n        <mat-menu #menu=\"matMenu\">\r\n          <div class=\"loginArea\">\r\n            <div (click)=\"stopPropagation($event)\">\r\n              <div>\r\n                <label for=\"userName\">User ID:</label>\r\n                <div class=\"input-group\">\r\n                  <input id=\"userName\" name=\"userName\" class=\"form-control\" required autofocus=\"autofocus\"\r\n                    (keydown.Tab)=\"stopPropagation($event)\" \r\n                    [(ngModel)]=\"user.userName\"/>\r\n                  <span class=\"input-group-addon\">\r\n                    <i class=\"glyphicon glyphicon-envelope\"></i>\r\n                  </span>\r\n                </div>\r\n              </div>\r\n              <div>\r\n                <label for=\"password\">Password:</label>\r\n                <div class=\"input-group\">\r\n                  <input id=\"password\" \r\n                  name=\"password\" \r\n                  class=\"form-control\" \r\n                  required \r\n                  type=\"password\" \r\n                  (keydown.Tab)=\"stopPropagation($event)\" \r\n                  [(ngModel)]=\"user.password\"/>\r\n                  <span class=\"input-group-addon\">\r\n                    <i class=\"glyphicon glyphicon-lock\"></i>\r\n                  </span>\r\n                </div>\r\n              </div>\r\n            </div>\r\n            <div>\r\n              <button mat-stroked-button class=\"childloginButton\" (click)=\"login()\">\r\n                Login\r\n              </button>\r\n            </div>\r\n          </div>\r\n        </mat-menu>\r\n\r\n      </div>\r\n    </mat-toolbar>\r\n    \r\n    <router-outlet></router-outlet>\r\n    \r\n    <!-- Add Content Here -->\r\n  </mat-sidenav-content>\r\n</mat-sidenav-container>\r\n"
+module.exports = "<mat-sidenav-container class=\"sidenav-container\">\r\n    <mat-sidenav *ngIf=\"showSide\"\r\n    #drawer class=\"sidenav\"\r\n    fixedInViewport=\"true\" \r\n    [attr.role]=\"(isHandset$ | async) ? 'dialog' : 'navigation'\"\r\n    [mode]=\"(isHandset$ | async) ? 'over' : 'side'\" [opened]=\"!(isHandset$ | async)\">\r\n     <mat-toolbar>Main Menu</mat-toolbar>\r\n     <mat-nav-list>\r\n       <a mat-list-item href=\"#\">Profile Data</a>\r\n       <a mat-list-item href=\"#\">Link 2</a>\r\n       <a mat-list-item href=\"#\">Link 3</a>\r\n     </mat-nav-list>\r\n   </mat-sidenav>\r\n  <mat-sidenav-content>\r\n    <mat-toolbar color=\"primary\">\r\n      <div *ngIf=\"securityService.userSecurity.isAuthenticated\">\r\n          <button type=\"button\" aria-label=\"Toggle sidenav\" mat-icon-button (click)=\"toggleNav()\">\r\n              <!-- *ngIf=\"isHandset$ | async\"\r\n              this if we can add to the button to hide and show base on expand -->\r\n              <mat-icon aria-label=\"Side nav toggle icon\">menu</mat-icon>\r\n            </button>\r\n      </div>\r\n      \r\n      <span class=\"Title\">School Corss</span>\r\n      <div>\r\n        <button *ngIf=\"!securityService.userSecurity.isAuthenticated\" class=\"loginButton\" mat-stroked-button [matMenuTriggerFor]=\"menu\">\r\n          Log in\r\n        </button>\r\n        <button *ngIf=\"securityService.userSecurity.isAuthenticated\" class=\"loginButton\" mat-stroked-button (click)=\"logOut()\">\r\n            Log out\r\n        </button>\r\n\r\n        <mat-menu #menu=\"matMenu\">\r\n          <div class=\"loginArea\">\r\n            <div (click)=\"stopPropagation($event)\">\r\n              <div>\r\n                <label for=\"userName\">User ID:</label>\r\n                <div class=\"input-group\">\r\n                  <input id=\"userName\" name=\"userName\" class=\"form-control\" required autofocus=\"autofocus\"\r\n                    (keydown.Tab)=\"stopPropagation($event)\" \r\n                    [(ngModel)]=\"user.userName\"/>\r\n                  <span class=\"input-group-addon\">\r\n                    <i class=\"glyphicon glyphicon-envelope\"></i>\r\n                  </span>\r\n                </div>\r\n              </div>\r\n              <div>\r\n                <label for=\"password\">Password:</label>\r\n                <div class=\"input-group\">\r\n                  <input id=\"password\" \r\n                  name=\"password\" \r\n                  class=\"form-control\" \r\n                  required \r\n                  type=\"password\" \r\n                  (keydown.Tab)=\"stopPropagation($event)\" \r\n                  [(ngModel)]=\"user.password\"/>\r\n                  <span class=\"input-group-addon\">\r\n                    <i class=\"glyphicon glyphicon-lock\"></i>\r\n                  </span>\r\n                </div>\r\n              </div>\r\n            </div>\r\n            <div>\r\n              <button mat-stroked-button class=\"childloginButton\" (click)=\"logIn()\">\r\n                Login\r\n              </button>\r\n            </div>\r\n          </div>\r\n        </mat-menu>\r\n\r\n      </div>\r\n    </mat-toolbar>\r\n    \r\n    <router-outlet></router-outlet>\r\n    \r\n    <!-- Add Content Here -->\r\n  </mat-sidenav-content>\r\n</mat-sidenav-container>\r\n"
 
 /***/ }),
 
@@ -415,9 +423,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MainComponent", function() { return MainComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_cdk_layout__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/cdk/layout */ "./node_modules/@angular/cdk/esm5/layout.es5.js");
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm5/operators/index.js");
-/* harmony import */ var _services_security_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../_services/security.service */ "./src/app/_services/security.service.ts");
-/* harmony import */ var _models_app_user__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../_models/app-user */ "./src/app/_models/app-user.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm5/operators/index.js");
+/* harmony import */ var _services_security_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../_services/security.service */ "./src/app/_services/security.service.ts");
+/* harmony import */ var _models_app_user__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../_models/app-user */ "./src/app/_models/app-user.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -432,26 +441,45 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
 var MainComponent = /** @class */ (function () {
-    function MainComponent(breakpointObserver, securityService) {
+    function MainComponent(breakpointObserver, securityService, router) {
         this.breakpointObserver = breakpointObserver;
         this.securityService = securityService;
+        this.router = router;
         this.isHandset$ = this.breakpointObserver.observe(_angular_cdk_layout__WEBPACK_IMPORTED_MODULE_1__["Breakpoints"].Handset)
-            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (result) { return result.matches; }));
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(function (result) { return result.matches; }));
     }
     MainComponent.prototype.stopPropagation = function (event) {
         event.stopPropagation();
     };
     MainComponent.prototype.ngOnInit = function () {
-        this.user = new _models_app_user__WEBPACK_IMPORTED_MODULE_4__["AppUser"]();
+        this.user = new _models_app_user__WEBPACK_IMPORTED_MODULE_5__["AppUser"]();
     };
-    MainComponent.prototype.login = function () {
+    MainComponent.prototype.logIn = function () {
+        var _this = this;
         this.securityService.login(this.user)
             .subscribe(function (resp) {
+            if (_this.securityService.userSecurity.isAuthenticated) {
+                _this.showSide = true;
+                _this.router.navigate(['teacherProfile']);
+            }
             console.log('log in succeeded');
         }, function (error) {
             console.log(error);
         });
+    };
+    MainComponent.prototype.logOut = function () {
+        this.showSide = false;
+        this.securityService.logout();
+    };
+    MainComponent.prototype.toggleNav = function () {
+        if (this.showSide) {
+            this.showSide = false;
+        }
+        else {
+            this.showSide = true;
+        }
     };
     MainComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -460,9 +488,76 @@ var MainComponent = /** @class */ (function () {
             styles: [__webpack_require__(/*! ./main.component.scss */ "./src/app/main/main.component.scss")],
         }),
         __metadata("design:paramtypes", [_angular_cdk_layout__WEBPACK_IMPORTED_MODULE_1__["BreakpointObserver"],
-            _services_security_service__WEBPACK_IMPORTED_MODULE_3__["SecurityService"]])
+            _services_security_service__WEBPACK_IMPORTED_MODULE_4__["SecurityService"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"]])
     ], MainComponent);
     return MainComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/main/user-profile/user-profile.component.html":
+/*!***************************************************************!*\
+  !*** ./src/app/main/user-profile/user-profile.component.html ***!
+  \***************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div style=\"text-align:center\">\n    <h1>\n      Welcome {{securityService.userSecurity.userName}}\n    </h1>\n  </div>\n  <h2>Here are your personal data</h2>"
+
+/***/ }),
+
+/***/ "./src/app/main/user-profile/user-profile.component.scss":
+/*!***************************************************************!*\
+  !*** ./src/app/main/user-profile/user-profile.component.scss ***!
+  \***************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL21haW4vdXNlci1wcm9maWxlL3VzZXItcHJvZmlsZS5jb21wb25lbnQuc2NzcyJ9 */"
+
+/***/ }),
+
+/***/ "./src/app/main/user-profile/user-profile.component.ts":
+/*!*************************************************************!*\
+  !*** ./src/app/main/user-profile/user-profile.component.ts ***!
+  \*************************************************************/
+/*! exports provided: UserProfileComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UserProfileComponent", function() { return UserProfileComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _services_security_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../_services/security.service */ "./src/app/_services/security.service.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var UserProfileComponent = /** @class */ (function () {
+    function UserProfileComponent(securityService) {
+        this.securityService = securityService;
+    }
+    UserProfileComponent.prototype.ngOnInit = function () {
+    };
+    UserProfileComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-user-profile',
+            template: __webpack_require__(/*! ./user-profile.component.html */ "./src/app/main/user-profile/user-profile.component.html"),
+            styles: [__webpack_require__(/*! ./user-profile.component.scss */ "./src/app/main/user-profile/user-profile.component.scss")]
+        }),
+        __metadata("design:paramtypes", [_services_security_service__WEBPACK_IMPORTED_MODULE_1__["SecurityService"]])
+    ], UserProfileComponent);
+    return UserProfileComponent;
 }());
 
 

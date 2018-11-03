@@ -4,9 +4,13 @@
     fixedInViewport="true" 
     [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
     [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="!(isHandset$ | async)">
-     <mat-toolbar>Main Menu</mat-toolbar>
+     <mat-toolbar>
+        <a routerLink="/dashboard" class="navbar-brand">
+          Main Menu
+        </a>
+      </mat-toolbar>
      <mat-nav-list>
-       <a mat-list-item href="#">Link 1</a>
+       <a mat-list-item routerLink="/teacherProfile">Profile Data</a>
        <a mat-list-item href="#">Link 2</a>
        <a mat-list-item href="#">Link 3</a>
      </mat-nav-list>
