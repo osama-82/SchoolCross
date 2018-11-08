@@ -1,24 +1,37 @@
 <mat-sidenav-container class="sidenav-container">
-  <mat-sidenav #drawer class="sidenav" fixedInViewport="true" [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    <mat-sidenav *ngIf="showSide"
+    #drawer class="sidenav"
+    fixedInViewport="true" 
+    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
     [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="!(isHandset$ | async)">
-    <mat-toolbar>Main Menu</mat-toolbar>
-    <mat-nav-list>
-      <a mat-list-item href="#">Link 1</a>
-      <a mat-list-item href="#">Link 2</a>
-      <a mat-list-item href="#">Link 3</a>
-    </mat-nav-list>
-  </mat-sidenav>
+     <mat-toolbar>
+        <a routerLink="/dashboard" class="navbar-brand">
+          Main Menu
+        </a>
+      </mat-toolbar>
+     <mat-nav-list>
+       <a mat-list-item routerLink="/teacherProfile">Profile Data</a>
+       <a mat-list-item href="#">Link 2</a>
+       <a mat-list-item href="#">Link 3</a>
+     </mat-nav-list>
+   </mat-sidenav>
   <mat-sidenav-content>
     <mat-toolbar color="primary">
-      <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()">
-        <!-- *ngIf="isHandset$ | async"
-        this if we can add to the button to hide and show base on expand -->
-        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
-      </button>
+      <div *ngIf="securityService.userSecurity.isAuthenticated">
+          <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="toggleNav()">
+              <!-- *ngIf="isHandset$ | async"
+              this if we can add to the button to hide and show base on expand -->
+              <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+            </button>
+      </div>
+      
       <span class="Title">School Corss</span>
       <div>
-        <button class="loginButton" mat-stroked-button [matMenuTriggerFor]="menu">
+        <button *ngIf="!securityService.userSecurity.isAuthenticated" class="loginButton" mat-stroked-button [matMenuTriggerFor]="menu">
           Log in
+        </button>
+        <button *ngIf="securityService.userSecurity.isAuthenticated" class="loginButton" mat-stroked-button (click)="logOut()">
+            Log out
         </button>
 
         <mat-menu #menu="matMenu">
@@ -28,7 +41,8 @@
                 <label for="userName">User ID:</label>
                 <div class="input-group">
                   <input id="userName" name="userName" class="form-control" required autofocus="autofocus"
-                    (keydown.Tab)="stopPropagation($event)" />
+                    (keydown.Tab)="stopPropagation($event)" 
+                    [(ngModel)]="user.userName"/>
                   <span class="input-group-addon">
                     <i class="glyphicon glyphicon-envelope"></i>
                   </span>
@@ -37,7 +51,13 @@
               <div>
                 <label for="password">Password:</label>
                 <div class="input-group">
-                  <input id="password" name="password" class="form-control" required type="password" (keydown.Tab)="stopPropagation($event)" />
+                  <input id="password" 
+                  name="password" 
+                  class="form-control" 
+                  required 
+                  type="password" 
+                  (keydown.Tab)="stopPropagation($event)" 
+                  [(ngModel)]="user.password"/>
                   <span class="input-group-addon">
                     <i class="glyphicon glyphicon-lock"></i>
                   </span>
@@ -45,7 +65,7 @@
               </div>
             </div>
             <div>
-              <button mat-stroked-button class="childloginButton">
+              <button mat-stroked-button class="childloginButton" (click)="logIn()">
                 Login
               </button>
             </div>

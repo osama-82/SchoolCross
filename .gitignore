@@ -5,12 +5,9 @@ Spa/dist
 Spa/dist-server
 Spa/tmp
 Spa/out-tsc
-Api/WebApi/bin
-Api/WebApi/obj
-Api/WebApi/wwwroot
-Api/ApiTest/bin
-Api/ApiTest/obj
-Api/ApiTest/lcov.info
+WebApi/bin
+WebApi/obj
+WebApi/wwwroot
 
 # dependencies
 Spa/node_modules
