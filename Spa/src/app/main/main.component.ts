@@ -49,6 +49,7 @@ export class MainComponent implements OnInit {
   logOut() {
     this.showSide = false;
     this.securityService.logout();
+    this.router.navigate(['dashboard']);
   }
 
   toggleNav() {
