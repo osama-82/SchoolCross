@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Http;
 using WebApi.Model;
+using WebApi.DataModel;
 
 namespace WebApi.Controllers
 {
@@ -12,10 +13,19 @@ namespace WebApi.Controllers
     [ApiController]
     public class SecurityController : ControllerBase
     {
+        private SchoolCrossContext schoolContext;
+        public SecurityController(
+            SchoolCrossContext schoolContext)
+        {
+            this.schoolContext = schoolContext;
+        }
         [HttpPost]
         public IActionResult Post([FromBody]AppUser user)
         {
             AppUserAuth returnData = new AppUserAuth();
+
+            var a = schoolContext.AspNetUsers.FirstOrDefault();
+
             returnData.UserName = "Abbas Osama";
             returnData.IsAuthenticated = true;
             returnData.BearerToken = "eyJhbGciOiJIUzI1NiIs";
