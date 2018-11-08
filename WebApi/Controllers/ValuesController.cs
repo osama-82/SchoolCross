@@ -26,22 +26,22 @@ namespace WebApi.Controllers
             return "value";
         }
 
-        // POST api/values
-        [HttpPost]
-        public IActionResult Post([FromBody]AppUser user)
-        {
-            AppUserAuth returnData = new AppUserAuth();
-            returnData.UserName = "Abbas Osama";
-            returnData.IsAuthenticated = true;
-            returnData.BearerToken = "eyJhbGciOiJIUzI1NiIs";
-            returnData.Claims = new List<AppUserClaim>();
-            AppUserClaim cliam = new AppUserClaim();
-            cliam.ClaimId = new Guid();
-            cliam.ClaimType = "CanAccessProducts";
-            cliam.ClaimValue = "true";
-            returnData.Claims.Add(cliam);
-            return StatusCode(StatusCodes.Status200OK, returnData);
-        }
+        // // POST api/values
+        // [HttpPost]
+        // public IActionResult Post([FromBody]AppUser user)
+        // {
+        //     AppUserAuth returnData = new AppUserAuth();
+        //     returnData.UserName = "Abbas Osama";
+        //     returnData.IsAuthenticated = true;
+        //     returnData.BearerToken = "eyJhbGciOiJIUzI1NiIs";
+        //     returnData.Claims = new List<AppUserClaim>();
+        //     AppUserClaim cliam = new AppUserClaim();
+        //     cliam.ClaimId = new Guid();
+        //     cliam.ClaimType = "CanAccessProducts";
+        //     cliam.ClaimValue = "true";
+        //     returnData.Claims.Add(cliam);
+        //     return StatusCode(StatusCodes.Status200OK, returnData);
+        // }
 
         // PUT api/values/5
         [HttpPut("{id}")]

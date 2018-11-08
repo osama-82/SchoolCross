@@ -18,7 +18,7 @@ export class SecurityService {
     login(loginData: AppUser): Observable<AppUserAuth> {
 
         this.resetSecurityObject();
-        return this.http.post('/api/Values', loginData).pipe(
+        return this.http.post('/api/Security', loginData).pipe(
             map((response: AppUserAuth) => {
                 this.userSecurity = response;
                 localStorage.setItem("bearerToken",
