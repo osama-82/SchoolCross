@@ -1,11 +1,12 @@
 ﻿using System;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.Extensions.Configuration;
 
 namespace WebApi.DataModel
 {
-    public partial class SchoolCrossContext : DbContext
+    public partial class SchoolCrossContext : IdentityDbContext<AspNetUsers>
     {
 
         public SchoolCrossContext(DbContextOptions<SchoolCrossContext> options,
@@ -709,6 +710,8 @@ namespace WebApi.DataModel
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_StudentCurriculumGrade_Person");
             });
+
+            base.OnModelCreating(modelBuilder);
         }
     }
 }

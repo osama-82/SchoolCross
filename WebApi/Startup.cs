@@ -12,6 +12,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using WebApi.DataModel;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity;
 
 namespace WebApi
 {
@@ -27,6 +28,12 @@ namespace WebApi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddIdentity<AspNetUsers, IdentityRole>(cfg =>
+            {
+                cfg.User.RequireUniqueEmail = true;
+            })
+        .AddEntityFrameworkStores<SchoolCrossContext>();
+
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             services.AddDbContext<SchoolCrossContext>(options => options.UseSqlServer(this.Configuration["Database:ConnectionString"]));
         }
@@ -42,6 +49,8 @@ namespace WebApi
             {
                 app.UseHsts();
             }
+            
+            app.UseAuthentication();
             
             app.UseMvc();
         }
